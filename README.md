@@ -23,7 +23,8 @@ git add . && git commit -m "..." && git push
 ## Editing the policies
 
 Plain HTML with shared styles in `assets/style.css`, no build step and no
-JavaScript. The pages make no third-party requests (no web fonts, no analytics),
-which keeps them consistent with the Privacy Policy. Update the effective date when
+JavaScript. The pages make no third-party requests — the Inter typeface is
+self-hosted from `assets/fonts/` and there is no analytics — which keeps them
+consistent with the Privacy Policy. Update the effective date when
 the content changes, and keep the data practices in sync with the AdMob and
 RevenueCat integrations described in the game repository.
