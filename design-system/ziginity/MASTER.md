@@ -86,7 +86,7 @@ CSS-only, no GSAP (no runtime worth shipping on a static marketing page).
 | `.btn-primary` | `ember-600` bg, white text, glow shadow, `-translate-y-0.5` hover |
 | `.btn-ghost` | `white/8` fill + `white/12` border, `white/25` border on hover |
 | Store badge | 54px tall, 2xl radius, `white/[0.06]` glass, real store glyph (Simple Icons, CC0), 11px lead + 17px label, ember glow on hover |
-| PhoneFrame | gradient `white/15→5→10` 3–4px ring, 1.6rem inner radius, ember radial glow behind |
+| ShotCard | Screenshot as a card, no device frame (shots are 9:16, a phone shell looks dated and clips UI corners): `rounded-xl sm:rounded-2xl`, `ring-white/15`, deep shadow, ember radial glow behind |
 | Gallery | 3 or 4 columns so the last row is full; hover: `-translate-y-1`, scale 1.04, "View" pill; lightbox: Esc/←/→, focus moved in, Tab trapped, focus restored, scroll lock, `aria-modal` |
 | Header | floating 14-unit pill, transparent until scroll > 8px then `black/70` + `backdrop-blur-xl` |
 | Feature icon | 40×40 chip, `white/5` fill, `ember-400` glyph, ember tint on row hover |

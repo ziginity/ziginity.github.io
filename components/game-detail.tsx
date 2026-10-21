@@ -4,7 +4,7 @@ import Link from "next/link";
 import { gameJsonLd, type Game } from "@/lib/games";
 import FeatureIcon from "@/components/feature-icon";
 import Gallery from "@/components/gallery";
-import PhoneFrame from "@/components/phone-frame";
+import ShotCard from "@/components/shot-card";
 import StoreLinks from "@/components/store-links";
 import Trailer from "@/components/trailer";
 
@@ -84,7 +84,7 @@ export default function GameDetail({
 
             <div className="animate-rise-sm flex items-end justify-center gap-4 [animation-delay:120ms] sm:gap-8">
               {game.hero.map((shot, i) => (
-                <PhoneFrame
+                <ShotCard
                   key={shot.alt}
                   src={shot.src}
                   alt={shot.alt}

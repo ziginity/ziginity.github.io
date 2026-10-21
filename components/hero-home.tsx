@@ -1,4 +1,4 @@
-import PhoneFrame from "@/components/phone-frame";
+import ShotCard from "@/components/shot-card";
 import StoreLinks from "@/components/store-links";
 import { getGame } from "@/lib/games";
 import { withLiveLinks } from "@/lib/store-status";
@@ -65,13 +65,13 @@ export default async function HeroHome() {
           </ul>
 
           <div className="animate-rise-sm mt-16 flex items-start justify-center gap-4 [animation-delay:360ms] sm:gap-8 md:mt-20">
-            <PhoneFrame
+            <ShotCard
               src={first.src}
               alt={first.alt}
               priority
               className="w-[42%] max-w-[260px] animate-float-slow"
             />
-            <PhoneFrame
+            <ShotCard
               src={second.src}
               alt={second.alt}
               priority
