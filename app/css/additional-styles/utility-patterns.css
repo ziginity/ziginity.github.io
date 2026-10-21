@@ -1,0 +1,38 @@
+/* Buttons */
+.btn,
+.btn-sm {
+  @apply inline-flex items-center justify-center gap-2 rounded-full text-sm font-semibold whitespace-nowrap transition-all duration-200;
+}
+
+.btn {
+  @apply px-6 py-3;
+}
+
+.btn-sm {
+  @apply px-4 py-2 text-[13px];
+}
+
+/* Ember primary: dark enough that white text stays readable. */
+.btn-primary {
+  @apply bg-ember-600 text-white shadow-[0_10px_30px_-12px_rgba(226,84,26,0.9)] hover:-translate-y-0.5 hover:bg-ember-500 active:translate-y-0;
+}
+
+/* Glass secondary for the dark base. */
+.btn-ghost {
+  @apply border border-white/12 bg-white/8 text-white hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/12 active:translate-y-0;
+}
+
+/* Section label: small, wide-tracked, with an ember pip. */
+.eyebrow {
+  @apply inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.18em] text-white/55 uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  @apply inline-block h-1.5 w-1.5 rounded-full bg-ember-500 shadow-[0_0_10px_2px_rgba(226,84,26,0.55)];
+}
+
+/* Panel: a lifted card on the dark base. */
+.panel {
+  @apply border border-white/10 bg-white/[0.03] backdrop-blur-sm;
+}
