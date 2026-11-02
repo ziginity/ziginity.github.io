@@ -22,9 +22,9 @@ export default function StoreLinks({
   if (links.length === 0) {
     return (
       <p
-        className={`inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-2.5 text-sm font-medium text-white/60 ${className}`}
+        className={`inline-flex items-center gap-2 rounded-full border border-fg/12 bg-fg/5 px-4 py-2.5 text-sm font-medium text-fg/60 ${className}`}
       >
-        <span className="h-2 w-2 rounded-full bg-ember-400 shadow-[0_0_10px_2px_rgba(226,84,26,0.6)]" />
+        <span className="h-2 w-2 rounded-full bg-accent-400 shadow-[0_0_10px_2px_rgba(100,210,255,0.6)]" />
         Coming soon
       </p>
     );
@@ -39,12 +39,12 @@ export default function StoreLinks({
           <a
             key={link.href}
             href={link.href}
-            className="group inline-flex h-[54px] items-center gap-3 rounded-2xl border border-white/12 bg-white/[0.06] pl-4 pr-5 text-left backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-ember-500/50 hover:bg-white/[0.1] hover:shadow-[0_18px_40px_-20px_rgba(226,84,26,0.65)] active:translate-y-0"
+            className="group inline-flex h-[54px] items-center gap-3 glass rounded-2xl pl-4 pr-5 text-left transition-all duration-200 hover:-translate-y-0.5 hover:border-accent-500/50 hover:bg-fg/[0.1] hover:shadow-[0_18px_40px_-20px_rgba(100,210,255,0.65)] active:translate-y-0"
           >
             {store && (
               <svg
                 viewBox="0 0 24 24"
-                className="h-6 w-6 shrink-0 fill-white/90 transition group-hover:fill-white"
+                className="h-6 w-6 shrink-0 fill-fg/90 transition group-hover:fill-fg"
                 aria-hidden="true"
               >
                 <path d={store.path} />
@@ -52,11 +52,11 @@ export default function StoreLinks({
             )}
             <span className="leading-none">
               {store && (
-                <span className="mb-1 block text-[11px] tracking-normal text-white/55">
+                <span className="mb-1 block text-[11px] tracking-normal text-fg/55">
                   {store.lead}
                 </span>
               )}
-              <span className="block text-[17px] font-semibold text-white">
+              <span className="block text-[17px] font-semibold text-fg">
                 {link.label}
               </span>
             </span>

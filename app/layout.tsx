@@ -15,11 +15,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Ziginity — Independent games, made simple",
+    default: "Ziginity — Every game, one twist nobody saw coming",
     template: "%s — Ziginity",
   },
   description:
-    "Ziginity is a small independent game studio. We build thoughtful, focused games around one idea: keep it simple, make it fun.",
+    "Ziginity is an independent game studio. Every game is built around one twist nobody saw coming, like a chess puzzle where every piece is a bomb.",
   // Pages without their own og:title fall back to <title>.
   openGraph: {
     type: "website",
@@ -36,7 +36,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} scroll-smooth`}>
-      <body className="font-inter tracking-tight text-white antialiased">
+      <body className="font-inter tracking-tight text-fg antialiased">
+        <div aria-hidden="true" className="sky">
+          <span />
+          <span />
+          <span />
+        </div>
         <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
           {children}
         </div>

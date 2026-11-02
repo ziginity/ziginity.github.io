@@ -4,18 +4,18 @@ import { games } from "@/lib/games";
 
 import Logo from "./logo";
 
-const LINK = "text-white/60 transition hover:text-white";
+const LINK = "text-fg/60 transition hover:text-fg";
 
 export default function Footer({ border = false }: { border?: boolean }) {
   return (
-    <footer className={border ? "border-t border-white/10" : ""}>
+    <footer className={border ? "border-t border-fg/10" : ""}>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex flex-col gap-8 py-12 sm:flex-row sm:items-start sm:justify-between md:py-14">
           <div className="max-w-xs">
             <Logo />
-            <p className="mt-4 text-sm leading-relaxed text-white/60">
-              A small independent game studio. One idea, made simple: keep it
-              simple, make it fun.
+            <p className="mt-4 text-sm leading-relaxed text-fg/60">
+              An independent game studio. Every game is built around one
+              twist nobody saw coming.
             </p>
           </div>
 
@@ -55,7 +55,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-t border-white/10 py-6 text-[13px] text-white/55">
+        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-t border-fg/10 py-6 text-[13px] text-fg/55">
           <span>&copy; {new Date().getFullYear()} Ziginity</span>
           <span>Made with care, played offline.</span>
         </div>

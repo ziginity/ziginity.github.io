@@ -29,7 +29,7 @@ export default function Trailer({
   }, [playing]);
 
   return (
-    <div className="relative aspect-video overflow-hidden rounded-3xl border border-white/10 bg-ink-900 shadow-[0_50px_120px_-50px_rgba(0,0,0,1)]">
+    <div className="relative aspect-video overflow-hidden rounded-3xl border border-fg/10 bg-ink-900 shadow-[0_50px_120px_-50px_rgba(0,0,0,1)]">
       {playing ? (
         <iframe
           ref={iframeRef}
@@ -58,7 +58,7 @@ export default function Trailer({
           <span className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center">
             <span
               aria-hidden="true"
-              className="animate-halo absolute inset-0 rounded-full bg-ember-500/60"
+              className="animate-halo absolute inset-0 rounded-full bg-accent-500/60"
             />
             <span className="relative flex h-16 w-16 items-center justify-center rounded-full border border-white/25 bg-white/95 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.9)] transition duration-300 group-hover:scale-110 group-hover:bg-white">
               <svg
@@ -71,7 +71,7 @@ export default function Trailer({
             </span>
           </span>
 
-          <span className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full border border-white/15 bg-black/50 px-4 py-1.5 text-[11px] font-semibold tracking-[0.16em] text-white/70 uppercase backdrop-blur-sm transition group-hover:border-ember-500/50 group-hover:text-white">
+          <span className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full border border-white/15 bg-black/50 px-4 py-1.5 text-[11px] font-semibold tracking-[0.16em] text-white/70 uppercase backdrop-blur-sm transition group-hover:border-accent-500/50 group-hover:text-white">
             Watch trailer
           </span>
         </button>

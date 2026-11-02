@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import Logo from "./logo";
 
-const NAV = "text-sm text-white/60 transition hover:text-white";
+const NAV = "text-sm text-fg/60 transition hover:text-fg";
 
 export default function Header() {
   // The header gains a solid glass surface once the page scrolls under it.
@@ -24,7 +24,7 @@ export default function Header() {
         <div
           className={`mt-3 flex h-14 items-center justify-between gap-3 rounded-2xl px-3 transition-all duration-300 sm:px-4 ${
             scrolled
-              ? "border border-white/10 bg-black/70 shadow-[0_16px_40px_-24px_rgba(0,0,0,0.9)] backdrop-blur-xl"
+              ? "glass"
               : "border border-transparent bg-transparent"
           }`}
         >

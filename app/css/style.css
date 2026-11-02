@@ -7,11 +7,15 @@
 @theme {
   --font-inter: Inter, sans-serif;
 
-  /* Studio surfaces: near-black base with a slightly lifted panel tone. */
-  --color-ink-950: #08080a;
-  --color-ink-900: #0d0d10;
-  --color-ink-850: #121216;
-  --color-ink-800: #17171c;
+  /* Foreground: text, hairlines and glass tints. */
+  --color-fg: #ffffff;
+
+  /* Night surfaces (as in the Ring music app): deep indigo base with
+     slightly lifted panel tones. */
+  --color-ink-950: #0b0b1e;
+  --color-ink-900: #10102a;
+  --color-ink-850: #151536;
+  --color-ink-800: #1b1b42;
 
   /* Pure neutral greys (kept for muted text and badge labels). */
   --color-gray-50: #fafafa;
@@ -26,17 +30,17 @@
   --color-gray-900: #171717;
   --color-gray-950: #0a0a0a;
 
-  /* Accent: the ember orange of the Chess Bang icon (500 = #E2541A). */
-  --color-ember-50: #fdf3ee;
-  --color-ember-100: #fbe3d6;
-  --color-ember-200: #f7c4a9;
-  --color-ember-300: #f19c71;
-  --color-ember-400: #ea7442;
-  --color-ember-500: #e2541a;
-  --color-ember-600: #c74414;
-  --color-ember-700: #a33612;
-  --color-ember-800: #832d14;
-  --color-ember-900: #6b2714;
+  /* Accent: one cyan (400 = #64D2FF). */
+  --color-accent-50: #effaff;
+  --color-accent-100: #dff4ff;
+  --color-accent-200: #b8eaff;
+  --color-accent-300: #87ddff;
+  --color-accent-400: #64d2ff;
+  --color-accent-500: #2fbcf0;
+  --color-accent-600: #1499cf;
+  --color-accent-700: #0f7aa7;
+  --color-accent-800: #126689;
+  --color-accent-900: #155571;
 
   --text-xs: 0.75rem;
   --text-xs--line-height: 1.5;
@@ -79,13 +83,26 @@
   If we ever want to remove these styles, we need to add an explicit border
   color utility to every element that depends on these defaults.
 */
+/* Liquid glass: frosted, saturated backdrop, a rim of light along the top
+   edge and a soft drop shadow. A utility so components can @apply it. */
+@utility glass {
+  border: 1px solid color-mix(in srgb, var(--color-fg) 12%, transparent);
+  background-color: color-mix(in srgb, var(--color-fg) 7%, transparent);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.22),
+    inset 0 -1px 0 rgb(255 255 255 / 0.06),
+    0 12px 32px -16px rgb(0 0 0 / 0.55);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  backdrop-filter: blur(24px) saturate(150%);
+}
+
 @layer base {
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: rgb(255 255 255 / 0.1);
+    border-color: color-mix(in srgb, var(--color-fg) 10%, transparent);
   }
 
   html {
@@ -102,12 +119,12 @@
   }
 
   ::selection {
-    background: var(--color-ember-500);
-    color: #fff;
+    background: var(--color-accent-400);
+    color: #0b0b1e;
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-ember-400);
+    outline: 2px solid var(--color-accent-400);
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -117,9 +134,10 @@
     cursor: pointer;
   }
 
-  /* Scrollbar tuned to the dark studio base. */
+  /* Thin scrollbar tinted from the foreground. */
   * {
-    scrollbar-color: rgb(255 255 255 / 0.18) transparent;
+    scrollbar-color: color-mix(in srgb, var(--color-fg) 18%, transparent)
+      transparent;
     scrollbar-width: thin;
   }
 }

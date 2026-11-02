@@ -5,18 +5,19 @@ export const metadata = {
   alternates: { canonical: "/privacy-policy/" },
 };
 
-const H2 = "mt-10 mb-3 text-xl font-bold text-white";
-const P = "mb-4 text-[15px] leading-relaxed text-white/55";
-const A = "text-ember-300 underline underline-offset-2 hover:text-ember-200";
+const H2 = "mt-10 mb-3 text-xl font-bold text-fg";
+const P = "mb-4 text-[15px] leading-relaxed text-fg/55";
+const A =
+  "text-accent-300 underline underline-offset-2 hover:text-accent-200";
 
 export default function PrivacyPolicy() {
   return (
     <section className="mx-auto max-w-3xl px-4 pb-16 pt-36 sm:px-6 md:pt-44">
       <p className="eyebrow">Legal</p>
-      <h1 className="mb-4 mt-5 text-4xl font-bold tracking-tight text-white md:text-5xl">
+      <h1 className="mb-4 mt-5 text-4xl font-bold tracking-tight text-fg md:text-5xl">
         Privacy Policy
       </h1>
-      <p className="mb-10 text-sm text-white/55">
+      <p className="mb-10 text-sm text-fg/55">
         Effective date: September 25, 2026 · Last updated: October 18, 2026
       </p>
 
@@ -50,7 +51,7 @@ export default function PrivacyPolicy() {
       </p>
 
       <h2 className={H2}>Information we do not collect</h2>
-      <ul className="mb-4 list-disc space-y-1.5 pl-5 text-[15px] text-white/55">
+      <ul className="mb-4 list-disc space-y-1.5 pl-5 text-[15px] text-fg/55">
         <li>
           No account or sign-in. We do not ask for your name, email or phone
           number.
@@ -64,7 +65,7 @@ export default function PrivacyPolicy() {
 
       <h2 className={H2}>Information handled by our service providers</h2>
 
-      <h3 className="mt-6 mb-2 text-base font-semibold text-white">
+      <h3 className="mt-6 mb-2 text-base font-semibold text-fg">
         Purchases — Apple and Google
       </h3>
       <p className={P}>
@@ -72,7 +73,7 @@ export default function PrivacyPolicy() {
         from. We never receive or store your card or billing details.
       </p>
 
-      <h3 className="mt-6 mb-2 text-base font-semibold text-white">
+      <h3 className="mt-6 mb-2 text-base font-semibold text-fg">
         Purchases and entitlements — RevenueCat
       </h3>
       <p className={P}>
@@ -88,7 +89,7 @@ export default function PrivacyPolicy() {
         .
       </p>
 
-      <h3 className="mt-6 mb-2 text-base font-semibold text-white">
+      <h3 className="mt-6 mb-2 text-base font-semibold text-fg">
         Advertising — Google AdMob (in versions that display ads)
       </h3>
       <p className={P}>
@@ -118,7 +119,7 @@ export default function PrivacyPolicy() {
       </p>
 
       <h2 className={H2}>How information is used</h2>
-      <ul className="mb-4 list-disc space-y-1.5 pl-5 text-[15px] text-white/55">
+      <ul className="mb-4 list-disc space-y-1.5 pl-5 text-[15px] text-fg/55">
         <li>
           To run the game and deliver what you purchase, including hints and
           restoring purchases.

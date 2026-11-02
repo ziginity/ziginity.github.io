@@ -81,7 +81,7 @@ export default function Gallery({ shots }: { shots: Shot[] }) {
             <button
               type="button"
               onClick={() => setIndex(i)}
-              className="group relative block w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-all duration-300 hover:-translate-y-1 hover:border-white/25 hover:shadow-[0_30px_60px_-30px_rgba(0,0,0,0.9)]"
+              className="group relative block w-full overflow-hidden rounded-2xl border border-fg/10 bg-fg/[0.03] transition-all duration-300 hover:-translate-y-1 hover:border-fg/25 hover:shadow-[0_30px_60px_-30px_rgba(0,0,0,0.9)]"
               aria-label={`Enlarge screenshot: ${shot.alt}`}
             >
               <Image

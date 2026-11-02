@@ -5,18 +5,19 @@ export const metadata = {
   alternates: { canonical: "/term-of-use/" },
 };
 
-const H2 = "mt-10 mb-3 text-xl font-bold text-white";
-const P = "mb-4 text-[15px] leading-relaxed text-white/55";
-const A = "text-ember-300 underline underline-offset-2 hover:text-ember-200";
+const H2 = "mt-10 mb-3 text-xl font-bold text-fg";
+const P = "mb-4 text-[15px] leading-relaxed text-fg/55";
+const A =
+  "text-accent-300 underline underline-offset-2 hover:text-accent-200";
 
 export default function TermOfUse() {
   return (
     <section className="mx-auto max-w-3xl px-4 pb-16 pt-36 sm:px-6 md:pt-44">
       <p className="eyebrow">Legal</p>
-      <h1 className="mb-4 mt-5 text-4xl font-bold tracking-tight text-white md:text-5xl">
+      <h1 className="mb-4 mt-5 text-4xl font-bold tracking-tight text-fg md:text-5xl">
         Terms of Use
       </h1>
-      <p className="mb-10 text-sm text-white/55">
+      <p className="mb-10 text-sm text-fg/55">
         Version 1.0 · Effective date: September 25, 2026
       </p>
 
