@@ -5,11 +5,24 @@ left (zig) and round on the right (infinity), in the order of the name, with one
 other at the crossing (the twist). It is rendered as tinted liquid glass
 (teal `#7ee8f5` → indigo `#5b6cff` → violet `#a45cff`), never on a tile.
 
+**Two versions:**
+
+- **With ring**: the mark at 80% inside a thin gradient ring (r=46, stroke
+  3.2–4 in the 100 box). For places we render ourselves: site header/footer,
+  banners, video watermarks.
+  The favicon (`app/icon.svg`, `favicon.ico`) also uses the ring, drawn flat
+  (opaque gradient, no glass, ring stroke 7, mark at 86%) so it stays legible
+  at 16–32px.
+- **Without ring**: the bare mark. For avatars and app icons (`apple-icon.png`,
+  `ziginity-avatar`), because YouTube/TikTok
+  crop to a circle and iOS to a rounded square; that crop frames the mark, and
+  a ring would double up with the crop edge or get cut off.
+
 Master artwork: `app/icon.svg` (site favicon) and `components/ui/logo.tsx`
 (header/footer). Path, in a 100×100 box, stroke width 10, round joins:
 
 ```
-M55.05 44.48C66.21 35.55 85 35.55 85 50C85 67 59 64 50 50L33 32L15 50L33 68L44.85 55.45
+M55.15 44.55L60.37 39.02A16 16 0 1 1 60.37 60.98L50 50L33 32L15 50L33 68L44.85 55.45
 ```
 
 | File | Use | Source |

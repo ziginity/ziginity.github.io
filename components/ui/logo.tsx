@@ -3,15 +3,18 @@ import Link from "next/link";
 
 /* Zig-finity: an infinity loop drawn in one stroke, sharp on the left
    (zig) and round on the right (infinity). One strand passes under the
-   other at the crossing: the twist. Drawn in a 100×100 box. */
+   other at the crossing: the twist. Drawn in a 100×100 box, then set
+   inside a thin gradient ring. The ring is only for places we render
+   ourselves; avatars and app icons go without it, since platforms crop
+   them to a circle or rounded square that frames the mark anyway. */
 const MARK =
-  "M55.05 44.48C66.21 35.55 85 35.55 85 50C85 67 59 64 50 50L33 32L15 50L33 68L44.85 55.45";
+  "M55.15 44.55L60.37 39.02A16 16 0 1 1 60.37 60.98L50 50L33 32L15 50L33 68L44.85 55.45";
 
 /**
- * Liquid-glass mark: the stroke is a mask over a teal → indigo → violet
+ * Liquid-glass mark in a thin ring: the stroke is a mask over a teal → indigo → violet
  * gradient (the night colors), with a diagonal highlight, a thin bright rim
  * (the stroke minus an eroded copy of itself) and a soft drop shadow.
- * Same artwork as app/icon.svg; ids are scoped so two logos can share a page.
+ * Same artwork as app/icon.svg (which has no ring); ids are scoped so two logos can share a page.
  */
 function GlassMark({ className = "" }: { className?: string }) {
   const id = useId().replace(/:/g, "");
@@ -29,7 +32,7 @@ function GlassMark({ className = "" }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="6 22 88 56"
+      viewBox="0 0 100 100"
       className={className}
       aria-hidden="true"
     >
@@ -69,11 +72,14 @@ function GlassMark({ className = "" }: { className?: string }) {
           <feComposite in2="soft" operator="in" />
         </filter>
       </defs>
-      {/* Shadow, glass body, highlight, rim. */}
-      <g filter={ref("shadow")}>{stroke}</g>
-      <rect x="0" y="20" width="100" height="60" fill={ref("glass")} mask={ref("mask")} />
-      <rect x="0" y="20" width="100" height="60" fill={ref("spec")} mask={ref("mask")} />
-      <g filter={ref("rim")}>{stroke}</g>
+      {/* Ring, then the mark: shadow, glass body, highlight, rim. */}
+      <circle cx="50" cy="50" r="46" fill="none" stroke={ref("glass")} strokeWidth="4" />
+      <g transform="translate(50 50) scale(.8) translate(-50 -50)">
+        <g filter={ref("shadow")}>{stroke}</g>
+        <rect x="0" y="20" width="100" height="60" fill={ref("glass")} mask={ref("mask")} />
+        <rect x="0" y="20" width="100" height="60" fill={ref("spec")} mask={ref("mask")} />
+        <g filter={ref("rim")}>{stroke}</g>
+      </g>
     </svg>
   );
 }
@@ -85,7 +91,7 @@ export default function Logo({ className = "" }: { className?: string }) {
       aria-label="Ziginity"
       className={`group inline-flex items-center gap-2.5 ${className}`}
     >
-      <GlassMark className="h-[26px] w-[41px] transition duration-300 group-hover:-translate-y-px group-hover:brightness-110" />
+      <GlassMark className="size-8 transition duration-300 group-hover:-translate-y-px group-hover:brightness-110" />
       <span className="text-[15px] font-semibold tracking-tight text-fg">
         Ziginity
       </span>
