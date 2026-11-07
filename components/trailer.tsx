@@ -14,10 +14,13 @@ export default function Trailer({
   id,
   poster,
   title,
+  vertical = false,
 }: {
   id: string;
   poster: StaticImageData;
   title: string;
+  /** 9:16 YouTube Short instead of a 16:9 video. */
+  vertical?: boolean;
 }) {
   const [playing, setPlaying] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
@@ -29,7 +32,9 @@ export default function Trailer({
   }, [playing]);
 
   return (
-    <div className="relative aspect-video overflow-hidden rounded-3xl border border-fg/10 bg-ink-900 shadow-[0_50px_120px_-50px_rgba(0,0,0,1)]">
+    <div
+      className={`relative overflow-hidden ${vertical ? "mx-auto aspect-[9/16] w-full max-w-[340px]" : "aspect-video"} rounded-3xl border border-fg/10 bg-ink-900 shadow-[0_50px_120px_-50px_rgba(0,0,0,1)]`}
+    >
       {playing ? (
         <iframe
           ref={iframeRef}
@@ -44,13 +49,13 @@ export default function Trailer({
           type="button"
           onClick={() => setPlaying(true)}
           className="group absolute inset-0 block h-full w-full"
-          aria-label={`Play trailer: ${title}`}
+          aria-label={`Play video: ${title}`}
         >
           <Image
             src={poster}
             alt=""
             fill
-            sizes="(min-width: 768px) 768px, 100vw"
+            sizes={vertical ? "340px" : "(min-width: 768px) 768px, 100vw"}
             className="object-cover transition duration-500 group-hover:scale-[1.02] group-hover:brightness-110"
           />
           <span className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/30 transition group-hover:from-black/60" />
@@ -72,7 +77,7 @@ export default function Trailer({
           </span>
 
           <span className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full border border-white/15 bg-black/50 px-4 py-1.5 text-[11px] font-semibold tracking-[0.16em] text-white/70 uppercase backdrop-blur-sm transition group-hover:border-accent-500/50 group-hover:text-white">
-            Watch trailer
+            {vertical ? "Watch" : "Watch trailer"}
           </span>
         </button>
       )}

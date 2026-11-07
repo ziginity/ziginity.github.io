@@ -60,9 +60,7 @@ export default function GameDetail({
                 />
                 <div>
                   <p className="eyebrow">{game.tag}</p>
-                  <p className="mt-1.5 text-sm text-fg/60">
-                    {game.subtitle}
-                  </p>
+                  <p className="mt-1.5 text-sm text-fg/60">{game.subtitle}</p>
                 </div>
               </div>
 
@@ -211,7 +209,7 @@ export default function GameDetail({
               >
                 <p className="eyebrow justify-center">Watch</p>
                 <h2 className="mt-4 text-3xl font-bold tracking-tight text-fg md:text-4xl">
-                  Trailer
+                  {game.trailer.vertical ? "See it in play" : "Trailer"}
                 </h2>
               </div>
               <div data-aos="fade-up" data-aos-delay="60">
@@ -219,6 +217,7 @@ export default function GameDetail({
                   id={game.trailer.id}
                   poster={game.trailer.poster}
                   title={`${game.name} trailer`}
+                  vertical={game.trailer.vertical}
                 />
               </div>
             </div>
@@ -249,12 +248,8 @@ export default function GameDetail({
                     className="h-14 w-14 shrink-0 rounded-2xl ring-1 ring-fg/15"
                   />
                   <div>
-                    <h3 className="text-xl font-bold text-fg">
-                      {other.name}
-                    </h3>
-                    <p className="mt-1 text-[15px] text-fg/60">
-                      {other.short}
-                    </p>
+                    <h3 className="text-xl font-bold text-fg">{other.name}</h3>
+                    <p className="mt-1 text-[15px] text-fg/60">{other.short}</p>
                   </div>
                 </div>
                 <Link

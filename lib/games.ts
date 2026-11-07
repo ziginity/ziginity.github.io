@@ -21,6 +21,7 @@ import MeSolved from "@/public/images/games/mystical-east/5_solved.webp";
 import MeRegion from "@/public/images/games/mystical-east/6_region.webp";
 import MeNight from "@/public/images/games/mystical-east/7_night.webp";
 import MeLantern from "@/public/images/games/mystical-east/8_lantern.webp";
+import MeTrailerPoster from "@/public/images/games/mystical-east/trailer-poster.webp";
 
 export type Shot = { src: StaticImageData; alt: string };
 export type Feature = { title: string; body: string; icon: string };
@@ -45,7 +46,8 @@ export type Game = {
   gallery: Shot[];
   /** Store listings; only live ones are shown (see lib/store-status.ts). */
   links: StoreLink[];
-  trailer?: { id: string; poster: StaticImageData };
+  /** YouTube video; `vertical` for a 9:16 Short. */
+  trailer?: { id: string; poster: StaticImageData; vertical?: boolean };
 };
 
 /* Feature icons: stroked paths on a 16×16 grid (see game-detail.tsx). */
@@ -231,6 +233,7 @@ export const games: Game[] = [
         href: "https://play.google.com/store/apps/details?id=com.ziginity.chessbang.east",
       },
     ],
+    trailer: { id: "t5rvjHcfwKU", poster: MeTrailerPoster, vertical: true },
   },
 ];
 
@@ -254,7 +257,8 @@ export function appStoreId(game: Game): string | undefined {
  * listing that is not out yet.
  */
 export function gameMetadata(game: Game): Metadata {
-  const poster = game.trailer?.poster;
+  // A tall Short poster makes a poor wide link preview; use the icon instead.
+  const poster = game.trailer?.vertical ? undefined : game.trailer?.poster;
   const appId = appStoreId(game);
   return {
     title: game.name,
