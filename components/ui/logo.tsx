@@ -1,11 +1,11 @@
 import { useId } from "react";
 import Link from "next/link";
 
-/* Zig-finity: an infinity loop drawn in one stroke, round on the left
-   (infinity) and sharp on the right (zig). One strand passes under the
+/* Zig-finity: an infinity loop drawn in one stroke, sharp on the left
+   (zig) and round on the right (infinity). One strand passes under the
    other at the crossing: the twist. Drawn in a 100×100 box. */
 const MARK =
-  "M44.95 44.48C33.79 35.55 15 35.55 15 50C15 67 41 64 50 50L67 32L85 50L67 68L55.15 55.45";
+  "M55.05 44.48C66.21 35.55 85 35.55 85 50C85 67 59 64 50 50L33 32L15 50L33 68L44.85 55.45";
 
 /**
  * Liquid-glass mark: the stroke is a mask over a teal → indigo → violet
